@@ -6,4 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".distanceActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            app:srcCompat="@drawable/distanceimage"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distance Converter"
+            android:layout_margin="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp"
+            android:gravity="center"></TextView>
+
+
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
