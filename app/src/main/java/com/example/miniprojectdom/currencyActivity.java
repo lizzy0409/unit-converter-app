@@ -12,10 +12,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class currencyActivity extends AppCompatActivity {
-    Spinner sp1;
-    Spinner sp2;
-    EditText ed1;
+    Spinner spinner1;
+    Spinner spinner2;
+    EditText editText;
     Button btnSave;
     TextView result;
 
@@ -23,29 +25,37 @@ public class currencyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
-        ed1 = findViewById(R.id.edttext);
-        sp1 = findViewById(R.id.spFrom);
-        sp2 = findViewById(R.id.spTo);
-        btnSave = findViewById(R.id.btnSave);
+
+       editText = findViewById(R.id.editCurrency);
+       spinner1 = findViewById(R.id.spFromCurrency);
+       spinner2 = findViewById(R.id.spToCurrency);
+        btnSave = findViewById(R.id.btnSaveCurrency);
         result = findViewById(R.id.stText);
 
-        String[] from = {"USD"};
+        HashMap<String, Double> map = new HashMap<String, Double>();
+        map.put("USD/DH", 10.53);
+        map.put("$/DH", 11.05);
+        map.put("$/USD", 1.05);
+        map.put("DH/USD", 0.095);
+        map.put("DH/$", 0.091);
+        map.put("USD/$", 0.95);
+
+        String[] from = {"USD","DH","$"};
         ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,from);
-        sp1.setAdapter(ad);
-        String[] to = {"DH","$"};
+        spinner1.setAdapter(ad);
+        String[] to = {"DH","$","USD"};
         ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,to);
-        sp2.setAdapter(ad2);
+        spinner2.setAdapter(ad2);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Double tot;
-                Double amount = Double.parseDouble(ed1.getText().toString());
-                if(sp1.getSelectedItem().toString() == "USD" && sp2.getSelectedItem().toString() == "DH"){
-                    tot = amount * 10;
-                    result.setText("The result is: " + amount + " " + sp2.getSelectedItem().toString());
-                   
-                }
+                Double totale;
+                Double amount = Double.parseDouble(editText.getText().toString());
+                totale = map.get(spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString()) * amount;
+                result.setText("The result is: " + totale + " " + spinner2.getSelectedItem().toString());
+                editText.setText("");
+
             }
         });
     }

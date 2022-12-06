@@ -58,7 +58,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edttext"
+            android:id="@+id/editCurrency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -83,7 +83,7 @@
             android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/spFrom"
+            android:id="@+id/spFromCurrency"
             android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="115dp"
@@ -108,7 +108,7 @@
             android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/spTo"
+            android:id="@+id/spToCurrency"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="140dp"
@@ -124,7 +124,7 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id = "@+id/btnSave"
+            android:id = "@+id/btnSaveCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/gris"
