@@ -12,5 +12,6 @@ public class massActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mass);
 
         getSupportActionBar().setTitle("Mass Converter");
+
     }
 }
