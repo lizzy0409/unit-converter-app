@@ -25,6 +25,8 @@ public class powerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power);
 
+        getSupportActionBar().setTitle("Power Converter");
+
             editText = findViewById(R.id.editPower);
             spinner1 = findViewById(R.id.spFromPower);
             spinner2 = findViewById(R.id.spToPower);

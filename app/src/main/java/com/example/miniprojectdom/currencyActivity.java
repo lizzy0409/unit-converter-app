@@ -26,6 +26,8 @@ public class currencyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
 
+        getSupportActionBar().setTitle("Currency Converter");
+
        editText = findViewById(R.id.editCurrency);
        spinner1 = findViewById(R.id.spFromCurrency);
        spinner2 = findViewById(R.id.spToCurrency);

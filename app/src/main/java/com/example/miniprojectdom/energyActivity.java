@@ -30,6 +30,9 @@ public class energyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_energy);
 
+        getSupportActionBar().setTitle("Energy Converter");
+
+
         editText = findViewById(R.id.editEnergy);
         spinner1 = findViewById(R.id.spFromEnergy);
         spinner2 = findViewById(R.id.spToEnergy);

@@ -21,13 +21,15 @@ public class volumeActivity extends AppCompatActivity {
     EditText inputEditText;
     Button btnSave;
     TextView resultTextView;
-    private static final String[] uniteDistance = {"mm", "dm", "cm", "m", "dam", "Hm", "Km"};
+    private static final String[] uniteDistance = {"mm3", "dm3", "cm3", "m3", "dam3", "Hm3", "Km3"};
     private static final List<String> uniteDistanceList = Arrays.asList(uniteDistance);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume);
+
+        getSupportActionBar().setTitle("Volume Converter");
 
         convertFromSpinner = (Spinner) findViewById(R.id.spFrom);
         convertToSpinner = (Spinner) findViewById(R.id.spTo);
