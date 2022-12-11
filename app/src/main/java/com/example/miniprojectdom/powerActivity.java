@@ -20,6 +20,7 @@ public class powerActivity extends AppCompatActivity {
     EditText editText;
     Button btnSave;
     TextView result;
+    String[] unitsPower = {"pW","nW","uW","mW","W","KW","MW","GW","TW"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +32,11 @@ public class powerActivity extends AppCompatActivity {
             btnSave = findViewById(R.id.btnSavePower);
             result = findViewById(R.id.stText);
 
-            String[] units = {"pW","nW","uW","mW","W","KW","MW","GW","TW"};
 
-            String[] from = {"pW","nW","uW","mW","W","KW","MW","GW","TW"};
-            ArrayAdapter ad =  new ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,from);
+            ArrayAdapter ad =  new ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitsPower);
             spinner1.setAdapter(ad);
 
-            String[] to = {"pW","nW","uW","mW","W","KW","MW","GW","TW"};
-            ArrayAdapter ad2 =  new ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,to);
+            ArrayAdapter ad2 =  new ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitsPower);
             spinner2.setAdapter(ad2);
 
             btnSave.setOnClickListener(new View.OnClickListener() {
@@ -50,11 +48,10 @@ public class powerActivity extends AppCompatActivity {
                     String unit2 = spinner2.getSelectedItem().toString();
                     int a = 0;
                     int b = 0;
-
-                    for(int i = 0; i<units.length;i++){
-                        if(units[i] == unit1)
+                    for(int i = 0; i<unitsPower.length;i++){
+                        if(unitsPower[i] == unit1)
                             a = i;
-                        if(units[i] == unit2)
+                        if(unitsPower[i] == unit2)
                             b = i;
                     }
                     totale = amount * pow(10,(a-b)*3);
@@ -63,5 +60,4 @@ public class powerActivity extends AppCompatActivity {
                 }
             });
         }
-
-    }
+}

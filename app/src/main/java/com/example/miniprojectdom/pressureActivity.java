@@ -20,6 +20,8 @@ public class pressureActivity extends AppCompatActivity {
     EditText editText;
     Button btnSave;
     TextView result;
+    String[] unitPressure = {"Pa","bar","atm"};
+    HashMap<String, BigDecimal> map = new HashMap<String, BigDecimal>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,6 @@ public class pressureActivity extends AppCompatActivity {
         result = findViewById(R.id.stText);
         btnSave = findViewById(R.id.btnSaveEnergy);
 
-
-        HashMap<String, BigDecimal> map = new HashMap<String, BigDecimal>();
         map.put("Pa/Pa", new BigDecimal(1.0));
         map.put("Pa/bar", new BigDecimal(0.00001));
         map.put("Pa/atm", new BigDecimal(0.00000987));
@@ -48,26 +48,17 @@ public class pressureActivity extends AppCompatActivity {
         map.put("atm/bar", new BigDecimal(0.980665));
         map.put("atm/atm", new BigDecimal(0.967841));
 
-
-        String[] from = {"Pa","bar","atm"};
-        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,from);
+        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitPressure);
         spinner1.setAdapter(ad);
-        String[] to = {"Pa","bar","atm"};
-        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,to);
+
+        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitPressure);
         spinner2.setAdapter(ad2);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-// //               String amountS = editText.getText().toString()
-//                if(amountS == ""){
-//                    Toast.makeText(getApplicationContext(),"enter a number in the amount",Toast.LENGTH_SHORT).show();
-//                }
-//                else {
                 Double amount = Double.parseDouble(editText.getText().toString());
-//                }
                 String units = spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString();
-
                 Double totale = map.get(units).doubleValue() * amount;
                 totale = Double.parseDouble(new DecimalFormat("#########.############").format(totale));
                 result.setText("The result is: " + totale.toString() + " " + spinner2.getSelectedItem().toString());

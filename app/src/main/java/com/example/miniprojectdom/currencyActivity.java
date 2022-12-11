@@ -20,7 +20,9 @@ public class currencyActivity extends AppCompatActivity {
     EditText editText;
     Button btnSave;
     TextView result;
-
+    String[] unitCurrency = {"USD","DH","$"};
+    String[] to = {"DH","$","USD"};
+    HashMap<String, Double> map = new HashMap<String, Double>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class currencyActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSaveCurrency);
         result = findViewById(R.id.stText);
 
-        HashMap<String, Double> map = new HashMap<String, Double>();
+
         map.put("USD/DH", 10.53);
         map.put("$/DH", 11.05);
         map.put("$/USD", 1.05);
@@ -40,11 +42,11 @@ public class currencyActivity extends AppCompatActivity {
         map.put("DH/$", 0.091);
         map.put("USD/$", 0.95);
 
-        String[] from = {"USD","DH","$"};
-        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,from);
+
+        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitCurrency)                ;
         spinner1.setAdapter(ad);
-        String[] to = {"DH","$","USD"};
-        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,to);
+
+        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitCurrency);
         spinner2.setAdapter(ad2);
 
         btnSave.setOnClickListener(new View.OnClickListener() {

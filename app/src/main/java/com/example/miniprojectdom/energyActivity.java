@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.database.DatabaseHelper;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -24,7 +23,8 @@ public class energyActivity extends AppCompatActivity {
     EditText editText;
     Button btnSave;
     TextView result;
-
+    String[] unitEnergy = {"J","KJ","KWh","Kcal","Kpm"};
+    HashMap<String, BigDecimal> map = new HashMap<String, BigDecimal>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +36,6 @@ public class energyActivity extends AppCompatActivity {
         result = findViewById(R.id.stText);
         btnSave = findViewById(R.id.btnSaveEnergy);
 
-
-        HashMap<String, BigDecimal> map = new HashMap<String, BigDecimal>();
         map.put("J/J", new BigDecimal(1.0));
         map.put("J/KJ", new BigDecimal(0.0001));
         map.put("J/KWh", new BigDecimal(0.000000278));
@@ -69,11 +67,10 @@ public class energyActivity extends AppCompatActivity {
         map.put("Kpm/Kpm", new BigDecimal(1.0));
 
 
-        String[] from = {"J","KJ","KWh","Kcal","Kpm"};
-        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,from);
+        ArrayAdapter ad =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitEnergy);
         spinner1.setAdapter(ad);
-        String[] to = {"J","KJ","KWh","Kcal","Kpm"};
-        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,to);
+
+        ArrayAdapter ad2 =  new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,unitEnergy);
         spinner2.setAdapter(ad2);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
