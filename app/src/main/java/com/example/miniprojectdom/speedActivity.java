@@ -29,12 +29,6 @@ public class speedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed);
 
-<<<<<<< HEAD
-=======
-        getSupportActionBar().setTitle("Speed Converter");
-
-
->>>>>>> 79f61780e94281c45d1ce32e32c2f9411a470d94
         editText = findViewById(R.id.editSpeed);
         spinner1 = findViewById(R.id.spFromSpeed);
         spinner2 = findViewById(R.id.spToSpeed);
