@@ -31,6 +31,8 @@ public class timeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time);
 
+        getSupportActionBar().setTitle("Time Converter");
+
         convertFromSpinner = (Spinner) findViewById(R.id.spFrom);
         convertToSpinner = (Spinner) findViewById(R.id.spTo);
         inputEditText = (EditText) findViewById(R.id.edttext);

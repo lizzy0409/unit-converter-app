@@ -29,6 +29,8 @@ public class temperatureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature);
 
+        getSupportActionBar().setTitle("Temperature Converter");
+
 
         convertFromSpinner = (Spinner) findViewById(R.id.spFrom);
         convertToSpinner = (Spinner) findViewById(R.id.spTo);

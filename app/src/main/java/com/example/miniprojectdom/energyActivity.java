@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79f61780e94281c45d1ce32e32c2f9411a470d94
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -29,6 +33,9 @@ public class energyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_energy);
+
+        getSupportActionBar().setTitle("Energy Converter");
+
 
         editText = findViewById(R.id.editEnergy);
         spinner1 = findViewById(R.id.spFromEnergy);

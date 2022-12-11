@@ -20,7 +20,7 @@ public class areaActivity extends AppCompatActivity {
     EditText inputEditText;
     Button btnSave;
     TextView resultTextView;
-    private static final String[] uniteDistance = {"mm", "dm", "cm", "m", "dam", "Hm", "Km"};
+    private static final String[] uniteDistance = {"mm2", "dm2", "cm2", "m2", "dam2", "Hm2", "Km2"};
     private static final List<String> uniteDistanceList = Arrays.asList(uniteDistance);
 
 
@@ -28,6 +28,8 @@ public class areaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area);
+
+        getSupportActionBar().setTitle("Area Converter");
 
         convertFromSpinner = (Spinner) findViewById(R.id.spFrom);
         convertToSpinner = (Spinner) findViewById(R.id.spTo);

@@ -28,6 +28,8 @@ public class pressureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pressure);
 
+        getSupportActionBar().setTitle("Pressure Converter");
+
         editText = findViewById(R.id.editPressure);
         spinner1 = findViewById(R.id.spFromPressure);
         spinner2 = findViewById(R.id.spToPressure);

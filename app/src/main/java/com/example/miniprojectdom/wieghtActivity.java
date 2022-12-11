@@ -28,6 +28,8 @@ public class wieghtActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wieght);
 
+        getSupportActionBar().setTitle("Wieght Converter");
+
         convertFromSpinner = (Spinner) findViewById(R.id.spFrom);
         convertToSpinner = (Spinner) findViewById(R.id.spTo);
         inputEditText = (EditText) findViewById(R.id.edttext);

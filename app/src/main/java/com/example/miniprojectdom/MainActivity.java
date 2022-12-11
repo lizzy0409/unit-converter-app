@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("Unit Converter");
+
         distanceCardView = (CardView) findViewById(R.id.distanceCardView);
         areaCardView = (CardView) findViewById(R.id.areaCardView);
         volumeCardView = (CardView) findViewById(R.id.volumeCardView);
