@@ -12,11 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 79f61780e94281c45d1ce32e32c2f9411a470d94
-
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -49,7 +44,7 @@ public class energyActivity extends AppCompatActivity {
         map.put("J/Kcal", new BigDecimal(0.000239));
         map.put("J/Kpm", new BigDecimal(0.102));
 
-        map.put("kJ/J", new BigDecimal(1000.0));
+        map.put("KJ/J", new BigDecimal(1000.0));
         map.put("KJ/KJ", new BigDecimal(1.0));
         map.put("KJ/KWh", new BigDecimal(0.000278));
         map.put("KJ/Kcal", new BigDecimal(0.239));
@@ -83,8 +78,10 @@ public class energyActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                  Double amount = Double.parseDouble(editText.getText().toString());
-                  Double totale = map.get(spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString()).doubleValue() * amount;
+                  Double amount = 0.0;
+                  Double totale = 0.0;
+                  amount = Double.parseDouble(editText.getText().toString());
+                  totale = map.get(spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString()).doubleValue() * amount;
                   totale = Double.parseDouble(new DecimalFormat("#########.###############").format(totale));
                   result.setText("The result is: " + totale.toString() + " " + spinner2.getSelectedItem().toString());
                   editText.setText("");

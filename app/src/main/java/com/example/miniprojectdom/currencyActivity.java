@@ -54,8 +54,9 @@ public class currencyActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Double totale;
-                Double amount = Double.parseDouble(editText.getText().toString());
+                Double totale = 0.0;
+                Double amount = 0.0;
+                amount = Double.parseDouble(editText.getText().toString());
                 totale = map.get(spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString()) * amount;
                 result.setText("The result is: " + totale + " " + spinner2.getSelectedItem().toString());
                 editText.setText("");

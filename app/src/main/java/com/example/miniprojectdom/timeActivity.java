@@ -48,7 +48,8 @@ public class timeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String resultMessage = "the result is :";
                 Double result = 0.0;
-                Double input = Double.parseDouble(inputEditText.getText().toString());
+                Double input = 0.0;
+                input = Double.parseDouble(inputEditText.getText().toString());
                 String convertFromUnit = convertFromSpinner.getSelectedItem().toString();
                 String convertToUnite  = convertToSpinner.getSelectedItem().toString();
 
@@ -57,8 +58,9 @@ public class timeActivity extends AppCompatActivity {
                else if(convertFromUnit == "min" && convertToUnite == "sec") result = input * 60;
                else if(convertFromUnit == "sec" && convertToUnite == "min") result = input / 60;
                else if(convertFromUnit == "min" && convertToUnite == "H") result = input / 60;
+               else if(convertFromUnit == "sec" && convertToUnite == "H") result = input / 3600;
 
-                result =Double.parseDouble(new DecimalFormat("##.##").format(result));
+                result =Double.parseDouble(new DecimalFormat("##.#####").format(result));
 
                 resultTextView.setText(resultMessage + result.toString() + " " + convertToUnite);
             }

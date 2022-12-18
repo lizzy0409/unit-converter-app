@@ -59,9 +59,11 @@ public class pressureActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Double amount = Double.parseDouble(editText.getText().toString());
+                Double amount = 0.0;
+                Double totale = 0.0;
+                amount = Double.parseDouble(editText.getText().toString());
                 String units = spinner1.getSelectedItem().toString()+"/"+ spinner2.getSelectedItem().toString();
-                Double totale = map.get(units).doubleValue() * amount;
+                totale = map.get(units).doubleValue() * amount;
                 totale = Double.parseDouble(new DecimalFormat("#########.############").format(totale));
                 result.setText("The result is: " + totale.toString() + " " + spinner2.getSelectedItem().toString());
                 editText.setText("");

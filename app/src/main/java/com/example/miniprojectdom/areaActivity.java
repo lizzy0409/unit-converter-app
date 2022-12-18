@@ -45,8 +45,9 @@ public class areaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String resultMessage = "the result is :";
-                Double result;
-                Double input = Double.parseDouble(inputEditText.getText().toString());
+                Double result = 0.0;
+                Double input = 0.0;
+                input = Double.parseDouble(inputEditText.getText().toString());
                 String convertFromUnit = convertFromSpinner.getSelectedItem().toString();
                 String convertToUnite  = convertToSpinner.getSelectedItem().toString();
 

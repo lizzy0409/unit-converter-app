@@ -47,7 +47,7 @@ public class distanceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String resultMessage = "the result is :";
-                Double result;
+                Double result = 0.0;
                 Double input = Double.parseDouble(inputEditText.getText().toString());
                 String convertFromUnit = convertFromSpinner.getSelectedItem().toString();
                 String convertToUnite  = convertToSpinner.getSelectedItem().toString();

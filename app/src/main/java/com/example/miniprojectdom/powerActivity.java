@@ -44,8 +44,9 @@ public class powerActivity extends AppCompatActivity {
             btnSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Double totale;
-                    Double amount = Double.parseDouble(editText.getText().toString());
+                    Double totale = 0.0;
+                    Double amount = 0.0;
+                    amount = Double.parseDouble(editText.getText().toString());
                     String unit1 = spinner1.getSelectedItem().toString();
                     String unit2 = spinner2.getSelectedItem().toString();
                     int a = 0;
